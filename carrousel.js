@@ -1,25 +1,22 @@
 const btnAv = document.querySelector('.btnAvn');
 const btnRe = document.querySelector('.btnRet');
-const carousel = document.getElementById('carousel')
-const imagenes = document.querySelectorAll('.cajaImg')
+const img = document.getElementById('carousel');
 
-btnAv.addEventListener('click', e => moveRight())
-btnRe.addEventListener('click', e => moveLeft())
+const imagenes = [
+    'img/imagen css.png',
+    'img/imagen html.png',
+    'img/imagen js.png'
+];
 
-let cambio = 0;
+let index = 0;
 
 const moveRight = () => {
-    cambio = cambio + 33.3;
-    if (cambio > 66.6) {
-        cambio = 0;
-    }
-    carousel.style.transform = `translate(-${cambio}%)`
+    index = (index + 1) % imagenes.length;
+    img.src = imagenes[index];
 }
 
 const moveLeft = () => {
-    cambio = cambio - 33.3;
-    if (cambio < 0) {
-        cambio = 66.6;
-    }
-    carousel.style.transform = `translate(-${cambio}%)`
+    index = (index - 1 + imagenes.length) % imagenes.length;
+    img.src = imagenes[index];
 }
+
