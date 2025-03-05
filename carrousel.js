@@ -4,7 +4,7 @@ const img = document.getElementById('carousel');
 
 const imagenes = [
     'img/imagen css.png',
-    'img/imagen html.png',
+    'img/imagen html.jpg',
     'img/imagen js.png'
 ];
 
